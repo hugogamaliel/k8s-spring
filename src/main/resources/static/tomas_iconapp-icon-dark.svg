@@ -1,0 +1,28 @@
+<svg id="e2fc84ce-b88c-4a9d-acfd-540d2468b23f" data-name="Build icon here" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="e103bfb6-b580-4216-afd5-107548a911af" x1="94.967" y1="140.554" x2="94.967" y2="124.554" gradientTransform="translate(119.446 144.554) rotate(180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.5" stop-opacity="0"/>
+      <stop offset="0.9"/>
+    </linearGradient>
+    <mask id="b1a7f397-1a85-4113-9a4b-dd4e40d20a9f" x="0" y="0" width="32" height="32" maskUnits="userSpaceOnUse">
+      <g>
+        <g>
+          <path d="M24,5H21V4a2,2,0,0,0-2-2H11A2,2,0,0,0,9,4V5H6A2,2,0,0,0,4,7V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V7A2,2,0,0,0,24,5ZM11,4h8V8H11ZM24,28H6V7H9v3H21V7h3V28Z" fill="#fff"/>
+          <g>
+            <rect x="12" y="19.91" width="15.027" height="10.101"/>
+            <rect x="21.958" y="4" width="5.042" height="16" fill="url(#e103bfb6-b580-4216-afd5-107548a911af)"/>
+          </g>
+        </g>
+        <rect x="21.958" y="4" width="5.042" height="16" fill="url(#e103bfb6-b580-4216-afd5-107548a911af)"/>
+      </g>
+    </mask>
+    <linearGradient id="a3d19944-b4c3-4deb-948b-a0215bdff4b8" y1="32" x2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0.2" stop-color="#8a3ffc"/>
+      <stop offset="0.8" stop-color="#30b0ff"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#b1a7f397-1a85-4113-9a4b-dd4e40d20a9f)">
+    <rect width="32" height="32" fill="url(#a3d19944-b4c3-4deb-948b-a0215bdff4b8)"/>
+  </g>
+  <path d="M28.707,22.293l-2-2A1,1,0,0,0,26,20H25V19a1,1,0,0,0-1-1H14a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1h.529a2.753,2.753,0,0,0,5.247.154h1.377A2.757,2.757,0,0,0,26.327,28H28a1,1,0,0,0,1-1V23A1,1,0,0,0,28.707,22.293ZM15,25.539V20h8v4.451a2.779,2.779,0,0,0-1.926,1.857h-1.3A2.747,2.747,0,0,0,15,25.539Zm2.176,2.615a.923.923,0,1,1,.924-.923A.924.924,0,0,1,17.176,28.154Zm6.54-.116a.923.923,0,1,1,.923-.923A.925.925,0,0,1,23.716,28.038ZM27,26h-.752A2.8,2.8,0,0,0,25,24.676V22h.586L27,23.414Z" fill="#f3f3f3"/>
+</svg>
