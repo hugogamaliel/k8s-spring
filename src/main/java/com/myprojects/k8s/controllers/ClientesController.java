@@ -47,13 +47,13 @@ public class ClientesController {
         
     @GetMapping("/clientes_by_place")
     //@GetMapping(value = "/clientes_by_place", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> getClientesByPlace(){
+    public ResponseEntity<Object> getClientesByPlace(@RequestParam("lugar") String lugar){
         
         Map<String, Object> response = new HashMap<>();
         
         try {
-            LOGGER.info("-- TRy -Getting Clientes By Place--");
-            List<Clientes> clientesList = clientesDao.getClientesByPlace();
+            LOGGER.info("-- TRy -Getting Clientes By Place--", lugar);
+            List<Clientes> clientesList = clientesDao.getClientesByPlace(lugar);
             if (clientesList.isEmpty()) {
                 LOGGER.info("..no record found..");
                 String msgFound = "Not record found in ";

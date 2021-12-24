@@ -14,8 +14,8 @@ import org.springframework.stereotype.Repository;
 
 public interface ClientesDao extends JpaRepository<Clientes, Long>{
     
-    @Query(value = "SELECT * FROM inv_clientes WHERE lugar = 'OCOTLAN'", nativeQuery = true)
-    //List<Clientes> getClientesByPlace(@Param("lugar") String lugar);
-    List<Clientes> getClientesByPlace();
+    @Query(value = "SELECT * FROM inv_clientes WHERE lugar = :lugar", nativeQuery = true)
+    List<Clientes> getClientesByPlace(@Param("lugar") String lugar);
+    //List<Clientes> getClientesByPlace();
     
 }
