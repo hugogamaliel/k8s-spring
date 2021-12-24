@@ -30,7 +30,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-//@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/clientes")
 public class ClientesController {
@@ -38,7 +37,7 @@ public class ClientesController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientesController.class);
     private static final String MESSAGE = "message";
             
-    @Autowired (required=false)
+    @Autowired
     private ClientesDao clientesDao;
 
     @GetMapping("/greeting")
@@ -46,7 +45,6 @@ public class ClientesController {
         return "hello";
     }
         
-    //@CrossOrigin(origins = "http://localhost:8080/api/")
     @GetMapping("/clientes_by_place")
     //@GetMapping(value = "/clientes_by_place", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> getClientesByPlace(){
