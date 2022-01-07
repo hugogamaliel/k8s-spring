@@ -1,5 +1,5 @@
 
-package com.myprojects.k8s.entites;
+package com.myprojects.k8s.entities;
 
 import java.io.Serializable;
 import java.util.Date;

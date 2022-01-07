@@ -1,8 +1,7 @@
 
-package com.myprojects.k8s.controllers;
+package com.myprojects.k8s.dao;
 
-
-import com.myprojects.k8s.entites.Clientes;
+import com.myprojects.k8s.entities.Clientes;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
@@ -16,6 +15,5 @@ public interface ClientesDao extends JpaRepository<Clientes, Long>{
     
     @Query(value = "SELECT * FROM inv_clientes WHERE lugar = :lugar", nativeQuery = true)
     List<Clientes> getClientesByPlace(@Param("lugar") String lugar);
-    //List<Clientes> getClientesByPlace();
     
 }
