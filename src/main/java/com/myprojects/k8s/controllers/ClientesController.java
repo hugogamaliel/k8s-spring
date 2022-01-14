@@ -1,7 +1,8 @@
 
 package com.myprojects.k8s.controllers;
 
-import com.myprojects.k8s.entites.Clientes;
+import com.myprojects.k8s.dao.ClientesDao;
+import com.myprojects.k8s.entities.Clientes;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +31,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-//@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/clientes")
 public class ClientesController {
@@ -38,7 +38,7 @@ public class ClientesController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientesController.class);
     private static final String MESSAGE = "message";
             
-    @Autowired (required=false)
+    @Autowired
     private ClientesDao clientesDao;
 
     @GetMapping("/greeting")
@@ -46,16 +46,15 @@ public class ClientesController {
         return "hello";
     }
         
-    //@CrossOrigin(origins = "http://localhost:8080/api/")
     @GetMapping("/clientes_by_place")
     //@GetMapping(value = "/clientes_by_place", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> getClientesByPlace(){
+    public ResponseEntity<Object> getClientesByPlace(@RequestParam("lugar") String lugar){
         
         Map<String, Object> response = new HashMap<>();
         
         try {
-            LOGGER.info("-- TRy -Getting Clientes By Place--");
-            List<Clientes> clientesList = clientesDao.getClientesByPlace();
+            LOGGER.info("-- TRy -Getting Clientes By Place--", lugar);
+            List<Clientes> clientesList = clientesDao.getClientesByPlace(lugar);
             if (clientesList.isEmpty()) {
                 LOGGER.info("..no record found..");
                 String msgFound = "Not record found in ";
@@ -72,50 +71,5 @@ public class ClientesController {
         
         
     }
-    
-    /*
-    @GetMapping(value = "/clientes_by_place", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> getClientesByPlace(@RequestParam("lugar") String lugar){
-        
-        Map<String, Object> response = new HashMap<>();
-        
-        LOGGER.info("--Getting Clientes By Place--", lugar);
-        
-        try {
-            List<Clientes> clientesList = clientesDao.getClientesByPlace(lugar);
-            return new ResponseEntity<>(clientesList, HttpStatus.OK);
-        }
-        catch (DataAccessException e){
-            LOGGER.error(e.getMessage());
-            response.put(MESSAGE, e.getMessage());
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-        
-    }
-    */
-    
-    
-    /*
-    @GetMapping(value = "/clientes_page", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> getClientesPage(@RequestParam("lugar") String lugar, @RequestParam int page, @RequestParam int size) {
-        Map<String, Object> response = new HashMap<>();
-        LOGGER.info("===== Getting clientes page  =====");
-        try {
-            Pageable pageable = PageRequest.of(page, size);
-            List<Clientes> trailerTracking = clientesDao.getClientesByPlace(lugar);
-            final int start = (int) pageable.getOffset();
-            final int end = Math.min((start + pageable.getPageSize()), trailerTracking.size());
-            Page<Clientes> pages = new PageImpl<Clientes>(trailerTracking.subList(start, end), pageable, trailerTracking.size());
-            return new ResponseEntity<>(pages, HttpStatus.OK);
-        } catch (DataAccessException e) {
-            LOGGER.error(e.getMessage());
-            response.put(MESSAGE, e.getMessage());
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-*/
-    
-    
-   
  
 }
