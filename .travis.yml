@@ -2,3 +2,17 @@ language: java
 sudo: required
 
 script: mvn clean package
+
+services:
+  - docker
+
+script:
+  - docker build -t k8s-spring .
+
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+  - docker tag back $DOCKER_USER/k8s-spring:$TRAVIS_BUILD_NUMBER
+  - docker push $DOCKER_USER/k8s-spring:$TRAVIS_BUILD_NUMBER
+  - docker tag back $DOCKER_USER/k8s-spring:latest
+  - docker push $DOCKER_USER/k8s-spring:latest
+
