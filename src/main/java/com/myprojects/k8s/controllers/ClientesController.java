@@ -72,4 +72,8 @@ public class ClientesController {
         return "hola JALAPEÑOS IBM";
     }
  
+    @GetMapping("/saludo3")
+     public String greeting3(){
+        return "hola JALAPEÑOS IBM 3";
+    }
 }
