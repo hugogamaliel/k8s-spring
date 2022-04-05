@@ -40,11 +40,6 @@ public class ClientesController {
             
     @Autowired
     private ClientesDao clientesDao;
-
-    @GetMapping("/greeting")
-     public String greeting(){
-        return "hello";
-    }
         
     @GetMapping("/clientes_by_place")
     //@GetMapping(value = "/clientes_by_place", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -70,6 +65,11 @@ public class ClientesController {
         }
         
         
+    }
+    
+    @GetMapping("/greeting")
+     public String greeting(){
+        return "hello";
     }
  
 }
