@@ -66,5 +66,10 @@ public class ClientesController {
         
         
     }
+    
+    @GetMapping("/greeting")
+     public String greeting(){
+        return "hello";
+    }
  
 }
