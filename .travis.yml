@@ -3,11 +3,11 @@ sudo: required
 
 script: mvn test -B
 
-services:
-  - docker
-
 install:
   - curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+
+services:
+  - docker
 
 script:
   - docker build -t $DOCKER_USER/k8s-spring .
