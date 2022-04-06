@@ -18,4 +18,6 @@ after_success:
   - docker push $DOCKER_USER/k8s-spring:$TRAVIS_BUILD_NUMBER
   - docker tag back $DOCKER_USER/k8s-spring:latest
   - docker push $DOCKER_USER/k8s-spring:latest
+  - kubectl version  --short
+
 
