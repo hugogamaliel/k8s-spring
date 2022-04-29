@@ -71,6 +71,12 @@ public class ClientesController {
      public String greeting(){
         return "hello";
     }
+     
+     @GetMapping("/saludos-jalapeños")
+     public String saludos2(){
+        return "saludos-jalapeños vamos a hacer salsa";
+    }
+     
     
  
 }
